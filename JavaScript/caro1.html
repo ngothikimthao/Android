@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="a" value='a' onclick=a1()>a</button>
+        <button id="b" value='b' onclick=b1()>b</button>
+        <button id="c" value='c' onclick=c1()>c</button>
+        <button id="d" value='d' onclick=d1()>d</button>
+        <button id="e" value='e' onclick=e1()>e</button>
+        <button id="f" value='f' onclick=f1()>f</button>
+        <button id="g" value='g' onclick=g1()>g</button>
+        <button id="h" value='h' onclick=h1()>h</button>
+        <button id="i" value='i' onclick=i1()>i</button>
+    </div>
+</body>
+<script>
+    var a;
+    var b;
+    var c;
+    var d;
+    var e;
+    var f;
+    var g;
+    var h;
+    var i;
+    var count = 0;
+    var button;
+
+    function checkXO() {
+        if (count % 2 == 0) {
+            return "O";
+        } else {
+            return "X";
+        }
+    }
+
+    function a1() {
+        count++;
+        document.getElementById("a").innerHTML = checkXO();
+        a = document.getElementById("a").textContent;
+        score1()
+    }
+
+
+    function b1() {
+        count++;
+        document.getElementById("b").innerHTML = checkXO();
+        b = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function c1() {
+        count++;
+        document.getElementById("c").innerHTML = checkXO();
+        c = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function d1() {
+        count++;
+        document.getElementById("d").innerHTML = checkXO();
+        d = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function e1() {
+        count++;
+        document.getElementById("e").innerHTML = checkXO();
+        e = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function f1() {
+        count++;
+        document.getElementById("f").innerHTML = checkXO();
+        f = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function g1() {
+        count++;
+        document.getElementById("g").innerHTML = checkXO();
+        g = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function h1() {
+        count++;
+        document.getElementById("h").innerHTML = checkXO();
+        h = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function i1() {
+        count++;
+        document.getElementById("i").innerHTML = checkXO();
+        i = document.getElementById("a").textContent;
+        score1()
+    }
+
+    function score1() {
+        if ((a == "X") && (b == "X") && (c == "X")) {
+            alert(" X winner");
+        }
+
+        if (d == "X" && e == "X" && f == "X") {
+            alert(" X winner");
+        }
+
+        if (g == "X" && h == "X" && i == "X") {
+            alert(" X winner");
+        }
+
+        if (a == "X" && d == "X" && g == "X") {
+            alert(" X winner");
+        }
+
+        if (b == "X" && e == "X" && h == "X") {
+            alert(" X winner");
+        }
+
+        if (c == "X" && f == "X" && i == "X") {
+            alert(" X winner");
+        }
+
+        if (a == "X" && e == "X" && i == "X") {
+            alert(" X winner");
+        }
+
+        if (c == "X" && e == "X" && g == "X") {
+            alert(" X winner");
+        }
+
+        if (a == "O" && b == "O" && c == "O") {
+            alert(" O winner");
+        }
+
+        if (d == "O" && e == "O" && f == "O") {
+            alert(" O winner");
+        }
+
+        if (g == "O" && h == "O" && i == "O") {
+            alert(" O winner");
+        }
+
+        if (a == "O" && d == "O" && g == "O") {
+            alert(" O winner");
+        }
+
+        if (b == "O" && e == "O" && h == "O") {
+            alert(" O winner");
+        }
+
+        if (c == "O" && f == "O" && i == "O") {
+            alert(" O winner");
+        }
+
+        if (a == "O" && e == "O" && i == "O") {
+            alert(" O winner");
+        }
+
+        if (c == "O" && e == "O" && g == "O") {
+            alert(" O winner");
+        }
+    }
+</script>
+
+</html>

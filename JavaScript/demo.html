@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="demo"></h1>
+    Number 1: <input type="text" id="1" name="1"><br> Number 2: <input type="text" id="2" name="2"><br>
+    <button type="submit" onclick="plus()" value="submit">Plus</button>
+    <button type="submit" onclick="minus()" value="submit">Minus</button>
+    <h1 id="plus"></h1>
+    <h1 id="minus"></h1>
+
+</body>
+<script>
+    function plus() {
+        var num1 = parseInt(document.getElementById("1").value);
+        var num2 = parseInt(document.getElementById("2").value);
+        console.log(num1);
+        var plus = num1 + num2;
+        document.getElementById("plus").innerHTML = plus;
+    }
+
+    function minus() {
+        var num1 = parseInt(document.getElementById("1").value);
+        var num2 = parseInt(document.getElementById("2").value);
+        var minus = num1 - num2;
+        document.getElementById("minus").innerHTML = minus;
+    }
+</script>
+
+</html>

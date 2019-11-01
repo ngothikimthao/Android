@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="container">
+        <button id="a" value='a' onclick="play('a')">a</button>
+        <button id="b" value='b' onclick="play('b')">b</button>
+        <button id="c" value='c' onclick="play('c')">c</button>
+        <button id="d" value='d' onclick="play('d')">d</button>
+        <button id="e" value='e' onclick="play('e')">e</button>
+        <button id="f" value='f' onclick="play('f')">f</button>
+        <button id="g" value='g' onclick="play('g')">g</button>
+        <button id="h" value='h' onclick="play('h')">h</button>
+        <button id="i" value='i' onclick="play('i')">i</button>
+    </div>
+</body>
+<script>
+    var count = 0;
+    var button;
+
+
+    function setXO(button) {
+        count++;
+        if (count % 2 == 0) {
+            document.getElementById(button).innerHTML = "X";
+        } else {
+            document.getElementById(button).innerHTML = "O";
+        }
+    }
+
+    function play(button) {
+        setXO(button);
+        check();
+        checkWinXO("a", "b", "c", "X");
+        checkWinXO("d", "e", "f", "X");
+        checkWinXO("g", "h", "i", "X");
+        checkWinXO("a", "e", "i", "X");
+        checkWinXO("g", "e", "c", "X");
+        checkWinXO("a", "d", "g", "X");
+        checkWinXO("b", "e", "h", "X");
+        checkWinXO("c", "f", "i", "X");
+
+        checkWinXO("a", "b", "c", "O");
+        checkWinXO("d", "e", "f", "O");
+        checkWinXO("g", "h", "i", "O");
+        checkWinXO("a", "e", "i", "O");
+        checkWinXO("g", "e", "c", "O");
+        checkWinXO("a", "d", "g", "O");
+        checkWinXO("b", "e", "h", "O");
+        checkWinXO("c", "f", "i", "O");
+    }
+
+    function check() {
+        var win = [
+            ["a", "b", "c"],
+            ["d", "e", "f"],
+            ["g", "h", "i"],
+            ["a", "e", "i"],
+            ["g", "e", "c"],
+            ["a", "d", "g"],
+            ["b", "e", "h"],
+            ["c", "f", "i"]
+        ]
+        for (var i = 0; i < win.length; i++) {
+
+            for (var j = 0; j < 3; j++) {
+                var btn1 = win[i][j];
+                var btn2 = win[i][j];
+                console.log(win[i][j])
+                    //checkWinXO(win[i][j], "X")
+            }
+        }
+    }
+
+    function checkWinXO(btn1, btn2, btn3, XorO) {
+        if ((document.getElementById(btn1).textContent == XorO) &&
+            (document.getElementById(btn2).textContent == XorO) &&
+            (document.getElementById(btn3).textContent == XorO)) {
+            alert(XorO + " winner");
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+</head>
+
+<body>
+
+    <h1 id="demo"></h1>
+    Username <input type="text" id="usename" name="usename"><br> <br> Password: <input type="text" id="password" name="password"><br><br>
+    <button type="submit" onclick="login()" value="submit">Login</button>
+
+
+</body>
+<script>
+    function login() {
+        var user = [{
+            username: "admin",
+            password: "123"
+        }, {
+            username: "thao",
+            password: "abc"
+        }]
+        var username = document.getElementById("usename").value;
+        var pass = document.getElementById("password").value;
+
+        for (var i = 0; i < user.length; i++) {
+            if (username == user[i].username && pass == user[i].password) {
+                alert("Login succesfully");
+            } else {
+                alert("Login unsuccesfully");
+            }
+        }
+
+    }
+</script>
+
+</html>
